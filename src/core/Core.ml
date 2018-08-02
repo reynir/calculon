@@ -244,7 +244,7 @@ let run conf ~init () =
     let connect () =
       Irc_client_tls.connect_by_name
         ~username:conf.C.username ~realname:conf.C.realname ~nick:conf.C.nick
-        ~server:conf.C.server ~port:conf.C.port
+        ?password:conf.C.password ~server:conf.C.server ~port:conf.C.port
         ()
     in
     loop_tls ~connect ~init ()
@@ -252,7 +252,7 @@ let run conf ~init () =
     let connect () =
       Irc_client_lwt.connect_by_name
         ~username:conf.C.username ~realname:conf.C.realname ~nick:conf.C.nick
-        ~server:conf.C.server ~port:conf.C.port
+        ?password:conf.C.password ~server:conf.C.server ~port:conf.C.port
         ()
     in
     loop_unsafe ~connect ~init ()

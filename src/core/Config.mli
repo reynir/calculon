@@ -12,6 +12,7 @@ type t = {
   username : string;
   realname : string;
   nick : string;
+  password : string option;
   tls: bool;
   channel : string;
   state_file : string; (* where plugins' state is stored *)
