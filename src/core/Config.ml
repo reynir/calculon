@@ -14,6 +14,7 @@ type t = {
   nick : string;
   password : string option;
   tls: bool;
+  tls_cert : Tls.Config.certchain option;
   channel : string;
   state_file : string;
   irc_log: irc_log; (* log IRC events *)
@@ -27,6 +28,7 @@ let default = {
   nick = "calculon";
   password = None;
   tls = true;
+  tls_cert = None;
   channel = "#ocaml";
   state_file = "state.json";
   irc_log = `None;
